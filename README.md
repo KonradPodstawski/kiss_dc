@@ -2,7 +2,7 @@
 
 ## Simple Example
 
-```
+```rust
 use kiss_dc::*;
 
 fn main() {
