@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEMO DCSS</title>
+<link rel="shortcut icon" href="favicon.png"></head>
+<link rel="stylesheet" href="style.css">
+
+<body>
+    <div class="grid-container">
+        <div class="top_left"> <p id="name_wiver"></p> </div>
+        <div class="top_center"></div>
+        <div class="top_right"></div>
+        <div class="mid_right"></div>
+        <div class="bottom_right"></div>
+        <div class="bottom_center"></div>
+        <div class="bottom_left"></div>
+        <div class="mid_left"></div>
+        <div class="mid_center"> 
+            <img id="wasm_logo" src="img/WASM.png" alt="WASM_LOGO"> 
+        
+            <div id="form">
+                <input type="text" name="nme" id="computer_name_text">
+                    <button id="computer_name_button">Add Name</button>
+                </input>
+            </div>
+        </div>
+    </div>
+<script type="text/javascript" src="index.js"></script></body>
+<script>
+    function run_srver() {
+        let name = document.getElementById("computer_name_text").value;
+        document.getElementById("form").style.visibility="hidden";
+        
+        let name_element =  document.getElementById("name_wiver");
+        name_element.append(name);
+
+        connect("192.168.7.105:6142", name, true, 0.1);
+    }
+
+    document.getElementById("computer_name_button").addEventListener("click", function() {
+        run_srver();
+    });
+</script>
+</html>

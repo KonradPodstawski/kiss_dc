@@ -1,0 +1,150 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+img {
+    width: 75%;
+    height: 75%;
+    margin: 12.5% 12.5% 5% 12.5%;
+    
+    animation: super-pulse 1.25s infinite alternate linear;
+    animation: super-pulse 1.25s infinite alternate linear;
+}
+
+#form {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+
+    visibility: inherit;
+    width: 100%;
+}
+
+#computer_name_text {
+    width: 90%;
+    margin:  0 5% 1% 5%;
+    font-size: xx-large;
+}
+
+#computer_name_button {
+    font-size: x-large;
+    height: 100%;
+    width: 90%;
+    margin:  0 5% 1% 5%;
+}
+
+#name_wiver {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+
+    height: 20%;
+    font-weight: bolder;
+    font-size: x-large;
+}
+
+.grid-container {
+    display: grid;
+    width: 100vw;
+    height: 100vh;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+        "top_left top_center top_right"
+        "mid_left mid_center mid_right"
+        "bottom_left bottom_center bottom_right";
+}
+
+.top_left {
+    grid-area: top_left;
+}
+
+.top_center {
+    grid-area: top_center;
+}
+
+.top_right {
+    grid-area: top_right;
+}
+
+.mid_right {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    grid-area: mid_right;
+}
+
+.bottom_right {
+    grid-area: bottom_right;
+}
+
+.bottom_center {
+    grid-area: bottom_center;
+}
+
+.bottom_left {
+    grid-area: bottom_left;
+}
+
+.mid_left {
+    grid-area: mid_left;
+}
+
+.mid_center {
+    grid-area: mid_center;
+}
+
+@keyframes super-pulse {
+    0% {
+        background: #ab47bc;
+    }
+
+    20% {
+        background: #9c27b0;
+    }
+
+    40% {
+        background: #8e24aa;
+    }
+
+    60% {
+        background: #7b1fa2;
+    }
+
+    80% {
+        background: #6a1b9a;
+    }
+
+    100% {
+        background: #4a148c;
+    }
+}
+
+@keyframes super-pulse {
+    0% {
+        background: #ab47bc;
+    }
+
+    20% {
+        background: #9c27b0;
+    }
+
+    40% {
+        background: #8e24aa;
+    }
+
+    60% {
+        background: #7b1fa2;
+    }
+
+    80% {
+        background: #6a1b9a;
+    }
+
+    100% {
+        background: #4a148c;
+    }
+}
