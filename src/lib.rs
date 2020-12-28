@@ -5,12 +5,14 @@ use tungstenite::server::accept;
 pub struct ServerState {
     ip_v4: &'static str,
 }
-
+/// Create an isntation of the server that will communicate with the client
 impl ServerState {
     pub fn new(ip_v4: &'static str) -> Self {
         Self { ip_v4 }
     }
-
+/// The function that constitutes the core of the library, sends the code to the client with the given "name" and returns the result.    
+/// The first argument is the code you want to send, the second is the identifier ("name") and the language in which the code was written.
+/// 
     pub fn run_server(
         self,
         message: &'static str,
