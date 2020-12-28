@@ -1,7 +1,7 @@
 [package]
 name = "kiss_dc"
 version = "0.0.5"
-authors = ["Konrad Podstawki"]
+authors = ["Konrad Podstawski"]
 edition = "2018"
 description = "A tool for simple communication with a computing server using the KISS rule."
 repository = "https://github.com/FiveDomain/kiss_dc"
