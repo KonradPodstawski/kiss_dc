@@ -2,6 +2,9 @@
 
 ## Simple Example
 
+KISS_DC is a tool that allows you to use the computer of a person with a previously prepared script(https://github.com/FiveDomain/KISS_DC_client_example) as a computing unit in a very simple way. The tool allows you to write code in languages such as JS and Python.
+One of the planned changes is adding the possibility of writing in every language compiling into WASM.
+
 ```rust
 use kiss_dc::*;
 
@@ -30,4 +33,3 @@ print(fib(50))";
 }
 
 ```
-
