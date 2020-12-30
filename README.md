@@ -43,7 +43,7 @@ use kiss_dc::*;
 
 fn main() {
 
-    let test_message_js = ServerState::new("192.168.7.103:6142").run_server_wasm( "x-y-z-123");
+    let test_message_js = ServerState::new("192.168.7.103:6142").run_server_wasm("x-y-z-123");
 
     println!("x-y-z-123: {}", test_message_js.unwrap_or(String::from("ServerFuction Crashed")));
 }
