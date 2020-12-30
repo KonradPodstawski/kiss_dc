@@ -4,12 +4,10 @@
  ![alt](https://github.com/FiveDomain/kiss_dc/blob/master/logo.png?raw=true)
 
 <p align="center">
-KISS_DC is a tool that allows you to use the computer of a person with a previously prepared script (https://github.com/FiveDomain/KISS_DC_client_example) as a computing unit in a very simple way. The tool allows you to write code in languages such as JS and Python.
-One of the planned changes is adding the possibility of writing in every language compiling into WASM.
- 
+KISS_DC is a tool that allows to use a person's computer with a previously prepared script (https://github.com/FiveDomain/KISS_DC_client_example) as a computing unit. This tool allows you to write code in languages such as JS and Python (and after the comilation to .wasm from such languages as Rust, Go, C++, C#, Java, Python or TypeScript. and many others ). One of the planned changes is adding Load Balancer / Computing Balancer.
 </p>
 
-## Simple Example
+## Simple Python Example 
 ```rust
 use kiss_dc::*;
 
@@ -38,3 +36,19 @@ print(fib(50))";
 }
 
 ```
+## Simple WebAssembly Example 
+
+```rust
+use kiss_dc::*;
+
+fn main() {
+
+    let test_message_js = ServerState::new("192.168.7.103:6142").run_server_wasm( "x-y-z-123");
+
+    println!("x-y-z-123: {}", test_message_js.unwrap_or(String::from("ServerFuction Crashed")));
+}
+
+```
+<p>
+In case of a webassembly, a file named dc_kiss_wasm_module.wasm is required in the client server directory.
+</p>
