@@ -23,7 +23,7 @@ impl ServerState {
     ) -> Result<String, tungstenite::Error> {
         let mut get_message = String::from(" ");
         'socket_loop: loop {
-            let server = TcpListener::bind(self.ip_v4).expect("don't have permission to this IP or Port");
+            let server = TcpListener::bind(self.ip_v4)?;
 
             'main_loop: for stream in server.incoming() {
                 let mut websocket = match accept(stream?) {
@@ -40,7 +40,7 @@ impl ServerState {
                     #[cfg(feature = "socket_debug")]
                     println!("{:?}", msg);
 
-                    get_message = msg.to_text().unwrap_or("error cast message").to_string();
+                    get_message = msg.to_text()?.to_string();
                     if msg.is_binary() || msg.is_text() {
                         if msg.to_text()? == name_device.to_string() {
                             websocket
@@ -65,14 +65,16 @@ impl ServerState {
         }
         Ok(get_message)
     }
-
+/// run the file with the name given to the variable name_file with the extension .wasm
+/// 
     pub fn run_server_wasm(
         self,
         name_device: &'static str,
+        name_file: &'static str
     ) -> Result<String, tungstenite::Error> {
         let mut get_message = String::from(" ");
         'socket_loop: loop {
-            let server = TcpListener::bind(self.ip_v4).expect("don't have permission to this IP or Port");
+            let server = TcpListener::bind(self.ip_v4)?;
 
             'main_loop: for stream in server.incoming() {
                 let mut websocket = match accept(stream?) {
@@ -89,13 +91,13 @@ impl ServerState {
                     #[cfg(feature = "socket_debug")]
                     println!("{:?}", msg);
 
-                    get_message = msg.to_text().unwrap_or("error cast message").to_string();
+                    get_message = msg.to_text()?.to_string();
                     if msg.is_binary() || msg.is_text() {
                         if msg.to_text()? == name_device.to_string() {
                             websocket
                                 .write_message(tungstenite::Message::Text("wasm".to_string()))?;
                             websocket
-                                .write_message(tungstenite::Message::Text("run_wasm".to_string()))?;
+                                .write_message(tungstenite::Message::Text(name_file.to_string()))?;
                         } else {
                             break 'main_loop;
                         }
