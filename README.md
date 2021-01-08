@@ -49,6 +49,3 @@ fn main() {
 }
 
 ```
-<p>
-In case of a webassembly, a file named dc_kiss_wasm_module.wasm is required in the client server directory.
-</p>
